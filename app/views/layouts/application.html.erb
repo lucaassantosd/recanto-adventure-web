@@ -1,15 +1,68 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>RecantoAdventureWeb</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <title>Recanto Adventure</title>
   </head>
-
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <!-- <a class="navbar-brand" href="#">Carousel</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item <%= (controller_name == 'home') ? 'active' : nil %>">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item <%= (controller_name == 'gallery') ? 'active' : nil %>">
+            <a class="nav-link" href="/gallery">Galeria</a>
+          </li>
+          <li class="nav-item <%= (controller_name == 'location') ? 'active' : nil %>">
+            <a class="nav-link" href="/location">Localização</a>
+          </li>
+          <li class="nav-item <%= (controller_name == 'contact') ? 'active' : nil %>">
+            <a class="nav-link" href="/contact">Contato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/">Reservas</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="py-5"></div>
     <%= yield %>
+    <!-- FOOTER -->
+    <div class="py-3"></div>
+    <footer class="container">
+      <hr>
+      <div class="row">
+        <div class="col-12 col-md">
+          <a href="https://github.com/lucaassantosd" target="_blank"><img src="assets/Tesseract_Mark.svg" width="25" height="25" alt=""></a>
+          <small class="d-block mb-3 mt-2 text-muted">© 2021 Lucas Domingues</small>
+        </div>
+        <div class="col-6 offset-6 col-md">
+          <ul class="list-unstyled text-small d-flex" style="float:right">
+            <li><a href="https://www.facebook.com/recantobonfimtaubate" role="button" target="_blank"><img class="rounded-circle" src="assets/facebook.png" alt="Facebook" width="21" height="21"></a></li>
+            <li class="ml-3"><a href="https://www.instagram.com/recantoadventure/" role="button" target="_blank"><img class="rounded-circle" src="assets/instagram.png" alt="Instagram" width="21" height="21"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
   </body>
 </html>

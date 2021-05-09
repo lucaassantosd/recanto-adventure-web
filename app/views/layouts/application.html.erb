@@ -8,56 +8,59 @@
     <%= csp_meta_tag %>
     <!-- Material Design for Bootstrap fonts and icons -->
     <!-- Material Design for Bootstrap CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <title>Recanto Bonfim Adventure</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-      <!-- <a class="navbar-brand" href="#">Carousel</a> -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item <%= (controller_name == 'home') ? 'active' : nil %>">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item <%= (controller_name == 'gallery') ? 'active' : nil %>">
-            <a class="nav-link" href="/gallery">Galeria</a>
-          </li>
-          <li class="nav-item <%= (controller_name == 'location') ? 'active' : nil %>">
-            <a class="nav-link" href="/location">Localização</a>
-          </li>
-          <li class="nav-item <%= (controller_name == 'contact') ? 'active' : nil %>">
-            <a class="nav-link" href="/contact">Contato</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Reservas</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="py-5"></div>
-    <%= yield %>
-    <!-- FOOTER -->
-    <div class="py-3"></div>
-    <footer class="container">
-      <hr>
-      <div class="row">
-        <div class="col-12 col-md">
-          <a href="https://github.com/lucaassantosd" target="_blank"><img src="images/Tesseract_Mark.svg" width="25" height="25" alt=""></a>
-          <small class="d-block mb-3 mt-2 text-muted">© 2021 Lucas Domingues</small>
+    <div class="page-container">
+      <div class="content-wrap">
+        <div class="head-nav mb-5">
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <!-- <a class="navbar-brand" href="#">Carousel</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item <%= (controller_name == 'home') ? 'active' : nil %>">
+                  <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item <%= (controller_name == 'gallery') ? 'active' : nil %>">
+                  <a class="nav-link" href="/gallery">Galeria</a>
+                </li>
+                <li class="nav-item <%= (controller_name == 'location') ? 'active' : nil %>">
+                  <a class="nav-link" href="/location">Localização</a>
+                </li>
+                <li class="nav-item <%= (controller_name == 'contact') ? 'active' : nil %>">
+                  <a class="nav-link" href="/contact">Contato</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Reservas</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-        <div class="col-6 offset-6 col-md">
-          <ul class="list-unstyled text-small d-flex" style="float:right">
-            <li><a href="https://www.facebook.com/recantobonfimtaubate" role="button" target="_blank"><img class="rounded-circle" src="images/facebook.png" alt="Facebook" width="21" height="21"></a></li>
-            <li class="ml-3"><a href="https://www.instagram.com/recantoadventure/" role="button" target="_blank"><img class="rounded-circle" src="images/instagram.png" alt="Instagram" width="21" height="21"></a></li>
-          </ul>
-        </div>
+        <%= yield %>
       </div>
-    </footer>
+      <!-- FOOTER -->
+      <footer>
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="https://github.com/lucaassantosd" target="_blank"><img src="images/Tesseract_Mark.svg" width="22" height="22" alt=""></a>
+            <small class="d-block mb-3 mt-2 text-light">© 2021</small>
+          </div>
+          <div class="col-6 offset-6 col-md">
+            <ul class="list-unstyled text-small d-flex" style="float:right">
+              <li><a href="https://www.facebook.com/recantobonfimtaubate" role="button" target="_blank"><img class="rounded-circle" src="images/facebook.png" alt="Facebook" width="21" height="21"></a></li>
+              <li class="ml-3"><a href="https://www.instagram.com/recantoadventure/" role="button" target="_blank"><img class="rounded-circle" src="images/instagram.png" alt="Instagram" width="21" height="21"></a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

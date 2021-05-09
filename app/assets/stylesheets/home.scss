@@ -230,8 +230,9 @@ a:hover{
     margin-top:-50px;
   }
 
-  body{
-    overflow-x: hidden !important;
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
   }
 
   .content-wrap{
